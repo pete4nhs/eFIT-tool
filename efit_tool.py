@@ -56,12 +56,12 @@ st.set_page_config(
 #st.title('Tool for ICBs to calculate the allocation of extra funding to primary care (at GP-level)')
 
 # ADD LOGO
-st.image('logos_n_name.png', width=750)
+st.image('input_data_other/logos_n_name.png', width=750)
 
 
 #These 17 lines make you insert text from a 'markdown' file (text written as markdown) 
 #by reading in the file
-INTRO_FILE = 'text_to_add/overview_gp.md'
+INTRO_FILE = 'input_data_other/overview_gp.md'
 def read_file_contents(file_name):
     ''''
     Read the contents of a file.
