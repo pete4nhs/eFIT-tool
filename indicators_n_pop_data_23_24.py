@@ -12,7 +12,7 @@ are then imported and run in the strealit app ('eFIT')
 import pandas as pd
 
 # Import the indicators data
-indicators_qox = pd.read_csv('/input_data_ind/qox.csv')
+indicators_qox = pd.read_csv('input_data_ind/qox.csv')
 indicators_qhg = pd.read_csv('/input_data_ind/qhg.csv')
 indicators_qhl = pd.read_csv('/input_data_ind/qhl.csv')
 indicators_qua = pd.read_csv('input_data_ind/qua.csv')
