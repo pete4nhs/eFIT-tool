@@ -13,8 +13,16 @@ st.write("**A:** Yes! If from the sidebar, you leave all the indicators boxes un
 st.write('')
 st.write('')
 st.write('')
-st.write("**Q:** When I try to upload my data from excel it gives the error 'UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 15-16: invalid continuation byte'")
+st.write("**Q:** When I try to upload my data from excel it gives the error 'UnicodeDecodeError: This app has encountered an error ...'")
 st.write("**A:** You can only upload files in a '.csv' format. Hence, with your file open with excel, re-save the document in .csv (save as :arrow_right: format: 'csv')")
+st.write('')
+st.write('')
+st.write('')
+st.write("**Q:** What is the difference beween using this tool or just using a weighted population formula?")
+st.write("**A:** Without specific instructions on how you want to split the funding, or depending on capacity of the financial team, monies might just be split using a weighted population formula. "
+         "However, with this tool, you can tailor the alloction based on your local needs by selecting the demographics and local needs specific for your intervention. "
+         "You can view the difference between using this eFIT tool and using a weighted population formula, by clicking the 'Show more detail' box and the expander at the bottom of the webpage.")
+
 
 st.write('')
 st.title('Methodology')
