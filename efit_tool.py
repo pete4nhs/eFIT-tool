@@ -40,7 +40,7 @@ from indicators_n_pop_data_23_24 import f_pop_qox, f_pop_qhg, f_pop_qhl, f_pop_q
 
 # Set page configuration
 st.set_page_config(
-    page_title="Funding Allocation Calculator",
+    page_title="eFIT",
     page_icon="https://www.england.nhs.uk/wp-content/themes/nhsengland/static/img/favicon.ico",
     layout="wide",    # alternatively write "centered" 
     initial_sidebar_state="expanded",
