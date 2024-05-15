@@ -2712,7 +2712,22 @@ elif button_ticked == True:
 
 
 # Add disclaimer
-if calculate_button_ticked == True or button_ticked == True:
+if calculate_button_ticked == True:
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.warning('Health data can be inaccurate. Consider checking important information.')
+
+if button_ticked == True:
     st.write('')
     st.write('')
     st.write('')
