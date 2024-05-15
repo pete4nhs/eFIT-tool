@@ -708,6 +708,10 @@ alloc_per_head = tot_alloc / selected_icb_for_ind_n_pop['Population'].fillna(0)
 ################################################################################
 
 # Include Button
+
+# Initialise 'Calculate_button_ticked' as False so that 'disclaimer' appears only if 'clicked'
+calculate_button_ticked = False
+
 if st.button("**Calculate**", type="primary"):
     with st.spinner('Running calculations...'):
 
@@ -2709,8 +2713,21 @@ elif button_ticked == True:
             st.plotly_chart(bar_traces_wp_p_h, use_container_width=True)
 
 
-
-
+# Add disclaimer
+if calculate_button_ticked == True or button_ticked == True:
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.write('')
+    st.warning('Health data can be inaccurate. Consider checking important information.')
 
 
 # End of code
