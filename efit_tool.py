@@ -711,6 +711,7 @@ alloc_per_head = tot_alloc / selected_icb_for_ind_n_pop['Population'].fillna(0)
 calculate_button_ticked = False
 
 if st.button("**Calculate**", type="primary"):
+    calculate_button_ticked = True
     with st.spinner('Running calculations...'):
 
     # Output files:
