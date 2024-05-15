@@ -7,8 +7,7 @@ Description:
 The code in this streamlit script allows you to run the allocation calculations based on the 
 user's preferences. 
 
-Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas, Fiona Head, 
-Ben Jackson and Luke Natali.
+Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas, Ben Jackson and Luke Natali.
 
 '''
 
@@ -41,7 +40,7 @@ from indicators_n_pop_data_23_24 import f_pop_qox, f_pop_qhg, f_pop_qhl, f_pop_q
 # Set page configuration
 st.set_page_config(
     page_title="eFIT",
-    page_icon="https://www.england.nhs.uk/wp-content/themes/nhsengland/static/img/favicon.ico",
+#    page_icon="https://www.england.nhs.uk/wp-content/themes/nhsengland/static/img/favicon.ico",
     layout="wide",    # alternatively write "centered" 
     initial_sidebar_state="expanded",
     menu_items={
@@ -52,12 +51,11 @@ st.set_page_config(
 
 # The background colour is defined by the 'config' file in the '.streamlit' folder
 
-# This is to add in a title for our web app's page (not needed here as title is included in logo image)
-#st.title('Tool for ICBs to calculate the allocation of extra funding to primary care (at GP-level)')
+# This is to add in a title for our web app's page (remove should you start using the logo below - which has the title too)
+st.title('Tool for ICBs to calculate the allocation of extra funding to primary care (at GP-level)')
 
 # ADD LOGO
-st.image('input_data_other/logos_n_name.png', width=750)
-
+#st.image('input_data_other/logos_n_name.png', width=750)
 
 #These 17 lines make you insert text from a 'markdown' file (text written as markdown) 
 #by reading in the file
