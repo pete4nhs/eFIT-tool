@@ -4,7 +4,7 @@ import streamlit as st
 st.title('**Tutorial**')
 st.write('Please have a look at our video for a short tutorial on how to use the eFIT tool')
 
-video_file = open('video_tutorial.mp4', 'rb')
+video_file = open('pages/video_tutorial.mp4', 'rb')
 video_bytes = video_file.read()
 
 st.video(video_bytes)
