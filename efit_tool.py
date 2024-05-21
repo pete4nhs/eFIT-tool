@@ -46,7 +46,7 @@ st.set_page_config(
     menu_items={
         "Get Help": "https://www.heec.co.uk/category/how-to-guide/",            # amend web address
 #        "Report a bug": "https://github.com/",    # amend with web address of my GitHub page
-        "About": "This tool is designed to support ICBs to calculate the allocation of extra funding to GP practices. Please refer to the 'About' tab in the sidebar for User Guide for instructions." 
+        "About": "This tool is designed to support ICBs to calculate the allocation of extra funding to GP practices. Please refer to the 'Tutorial' tab in the sidebar for User Guide for instructions." 
     },)
 
 # The background colour is defined by the 'config' file in the '.streamlit' folder
