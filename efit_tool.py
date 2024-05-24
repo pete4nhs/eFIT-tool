@@ -55,7 +55,7 @@ st.set_page_config(
 #st.title('Extra Funding allocation Inequality Tool (eFIT)')
 
 # ADD TITLE AS IMAGE
-st.image('input_data_other/name_wo_logo_2.png', width=750)
+st.image('input_data_other/name_wo_logo_2.png', width=500)
 
 # ADD LOGO
 #st.image('input_data_other/logos_n_name.png', width=750)
