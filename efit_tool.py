@@ -51,8 +51,11 @@ st.set_page_config(
 
 # The background colour is defined by the 'config' file in the '.streamlit' folder
 
-# This is to add in a title for our web app's page (remove should you start using the logo below - which has the title too)
-st.title('Extra Funding allocation Inequality Tool (eFIT)')
+# This is to add in a title for our web app's page (removed because title added as an image)
+#st.title('Extra Funding allocation Inequality Tool (eFIT)')
+
+# ADD TITLE AS IMAGE
+#st.image('input_data_other/name_wo_logos.png', width=750)
 
 # ADD LOGO
 #st.image('input_data_other/logos_n_name.png', width=750)
