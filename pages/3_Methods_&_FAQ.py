@@ -45,7 +45,7 @@ st.write('**A:** The allocation of general practice funding is well established 
          'but there is currently no national guidance on how to allocate discretionary additional funds in an equitable manner. '
          'Often ICBs resort to allocating funding per head of population, rather than considering inequalities and population need.'
          'This user‑friendly tool (eFIT) allows ICB managers to easily calculate various scenarios of how to split '
-         'this funding by taking into consideration the health data associated with the intervention they are aiming to roll out.**. ')
+         'this funding by taking into consideration the health data associated with the intervention they are aiming to roll out. ')
 st.write('')
 st.write('')
 st.write('')
