@@ -341,148 +341,6 @@ wo_p_n_r_str_output_table_sorted_per_h = pd.DataFrame()
 
 ################################################################################
 
-# SIDEBAR
-
-# Select the indicators
-with st.sidebar:
-    st.write('**Select up to three indicators**') 
-    
-# Listed Indicator 1    
-    ind_1_choice = st.sidebar.selectbox("Indicator #1:", indicators_list, help="Select the first indicator")
-
-    ind_1_weight = st.slider('**Weight**: contribution of indicator #1 (%)',0,100,50, step=1, 
-                     help='Select what proportion of the funding should be allocated based on indicator #1)')
-
-# Listed Indicators 2 & 3
-# This part makes sure that the slider for indicator 2 and 3 only appear if an indicator
-# is picked from the selectbox (hence, anything other than the  default 'choose an option')
-
-    # For indicator 2
-    ind_2_choice = st.sidebar.selectbox("Indicator #2 (optional):", indicators_list, 
-                                        help="Select the second indicator")
-
-    if ind_2_choice != 'Choose an option':
-        ind_2_weight = st.slider('**Weight**: contribution of indicator #2 (%)',0,100,0, step=1,
-                                 help='Select what proportion of the funding should be allocated based on indicator #2')
-    else:
-        ind_2_weight = 0
-
-    # For indicator 3
-    ind_3_choice = st.sidebar.selectbox("Indicator #3 (optional):", indicators_list,
-                                        help="Select the third indicator")
-
-    if ind_3_choice != 'Choose an option':
-        ind_3_weight = st.slider('**Weight**: contribution of indicator #3 (%)',0,100,0, step=1,
-                                 help='Select what proportion of the funding should be allocated based on indicator #3')
-    else:
-        ind_3_weight = 0
-
-
-    indicators_weights = [(ind_1_choice, ind_1_weight), (ind_2_choice, ind_2_weight), (ind_3_choice, ind_3_weight)] 
-    indicators_weights = [(indicator, weight) for indicator, weight in indicators_weights if weight > 0]
-
-################################################################################
-
-# Checkbox 'to check' if the user wants to add his/her own indicator data
-    user_wants_to_upload_indicator = st.checkbox('Do you want to upload your indicator instead?', 
-                                  help='Should you wish to use your own indicator data for your ICB, '
-                                  "you can upload up to three files (in '.csv' format). "
-                                  'Your file should include only two columns: column 1 '
-                                  'should have the GP code and column 2 should have the indicator values '
-                                  'for that GP practice')
- 
-
-    if user_wants_to_upload_indicator:
-        # First Uploaded indicator 
-        uploaded_file_1 = st.file_uploader("Upload your first indicator", type= ['csv', 'xlsx'])  # 4 some reason it crashes if I upload .xlsx files
-        if uploaded_file_1 is not None: 
-            uploaded_indicator_1 = pd.read_csv(uploaded_file_1) 
-            df_uploaded_indicator_1 = pd.DataFrame(uploaded_indicator_1)
-            name_indicator_1 = st.text_input("Enter name of your first indicator", 
-                                                placeholder="Enter name of indicator", 
-                                                label_visibility='collapsed')
-            if name_indicator_1 is None or name_indicator_1 == "":
-                name_indicator_1 = 'Uploaded indicator #1'
-            high_gets_more_1 = st.radio('High value gets:', ["More funding", "Less funding"], horizontal = True,
-                                        help='Select whether higher values for this indicator should result in allocating '
-                                        'proportionally more money or less money than a lower indicator value')
-            uploaded_ind_1_weight = st.slider(f'**Weight**: contribution of {name_indicator_1} (%)',0,100,0, step=1,
-                                            help='Select what proportion of the funding should be allocated based on your first uploaded indicator')
-                
-            # Get the current column names
-            current_columns_1 = df_uploaded_indicator_1.columns.tolist()
-            # Create a dictionary to map old column names to new column names
-            column_mapping_1 = {current_columns_1[0]: 'GP code', current_columns_1[1]: 'xyz'}
-            # Rename the columns
-            df_uploaded_indicator_1.rename(columns=column_mapping_1, inplace=True)
-            # Match the uploaded indicator to the indicators listed
-            matched_uploaded_indicator_1 = pd.merge(selected_icb_for_ind_n_pop['GP code'], df_uploaded_indicator_1, on='GP code', how='left')
-
-            
-            # Second Uploaded indicator 
-            st.write('')
-            st.write('')
-            uploaded_file_2 = st.file_uploader("Upload your second indicator (optional)", type= ['csv'])
-            if uploaded_file_2 is not None: 
-                uploaded_indicator_2 = pd.read_csv(uploaded_file_2) 
-                df_uploaded_indicator_2 = pd.DataFrame(uploaded_indicator_2)
-                name_indicator_2 = st.text_input("Enter name of your second indicator",  
-                                                placeholder="Enter name of indicator", 
-                                                label_visibility='collapsed')
-
-                if name_indicator_2 is None or name_indicator_2 == "":
-                    name_indicator_2 = 'Uploaded indicator #2'
-                high_gets_more_2 = st.radio('High value gets:', ["More funding ", "Less funding "], horizontal = True,
-                                        help='Select whether higher values for this indicator should result in allocating '
-                                        'proportionally more money or less money than a lower indicator value')
-
-                uploaded_ind_2_weight = st.slider(f'**Weight**: contribution of {name_indicator_2} (%)',0,100,0, step=1,
-                                        help='Select what proportion of the funding should be allocated based on your second uploaded indicator')
-
-                # Get the current column names
-                current_columns_2 = df_uploaded_indicator_2.columns.tolist()
-                # Create a dictionary to map old column names to new column names
-                column_mapping_2 = {current_columns_2[0]: 'GP code', current_columns_2[1]: 'xyz'}
-                # Rename the columns
-                df_uploaded_indicator_2.rename(columns=column_mapping_2, inplace=True)
-                # Match the uploaded indicator to the indicators listed
-                matched_uploaded_indicator_2 = pd.merge(selected_icb_for_ind_n_pop['GP code'], df_uploaded_indicator_2, on='GP code', how='left')
-
-                # Third Uploaded indicator 
-                st.write('')
-                st.write('')
-                uploaded_file_3 = st.file_uploader("Upload your third indicator (optional)", type= ['csv'])
-                if uploaded_file_3 is not None: 
-                    uploaded_indicator_3 = pd.read_csv(uploaded_file_3) 
-                    df_uploaded_indicator_3 = pd.DataFrame(uploaded_indicator_3)
-                    name_indicator_3 = st.text_input("Enter name of your third indicator",  
-                                                placeholder="Enter name of indicator", 
-                                                label_visibility='collapsed')
-
-                    if name_indicator_3 is None or name_indicator_3 == "":
-                        name_indicator_3 = 'Uploaded indicator #3'
-                    high_gets_more_3 = st.radio('High value gets:', ["More funding  ", "Less funding  "], horizontal = True,
-                                        help='Select whether higher values for this indicator should result in allocating '
-                                        'proportionally more money or less money than a lower indicator value')
-
-                    uploaded_ind_3_weight = st.slider(f'**Weight**: contribution of {name_indicator_3} (%)',0,100,0, step=1,
-                                        help='Select what proportion of the funding should be allocated based on your third uploaded indicator')
-
-                    # Get the current column names
-                    current_columns_3 = df_uploaded_indicator_3.columns.tolist()
-                    # Create a dictionary to map old column names to new column names
-                    column_mapping_3 = {current_columns_3[0]: 'GP code', current_columns_3[1]: 'xyz'}
-                    # Rename the columns
-                    df_uploaded_indicator_3.rename(columns=column_mapping_3, inplace=True)
-                    # Match the uploaded indicator to the indicators listed
-                    matched_uploaded_indicator_3 = pd.merge(selected_icb_for_ind_n_pop['GP code'], df_uploaded_indicator_3, on='GP code', how='left')
-
-            up_indicators_weights = [(name_indicator_1, uploaded_ind_1_weight), (name_indicator_2, uploaded_ind_2_weight), (name_indicator_3, uploaded_ind_3_weight)]
-            up_indicators_weights = [(up_indicator, up_weight) for up_indicator, up_weight in up_indicators_weights if up_weight > 0]
-
-################################################################################          
-
-
 # Create a dictionary to store indicator dataframes for the indicators
 #(left: name of indicator as you want it to appear in tool; right: name as it appears in imported data file i.e. excel)
 
@@ -516,22 +374,190 @@ indicators_list_dict = {
     'Stroke prevalence (all ages)': selected_icb_for_ind_n_pop['Stroke: QOF prevalence (all ages)(%)'],
     'Choose an option': hidden_param['ones']}
 
-
-selected_ind_1_w_correct_icb = indicators_list_dict.get(ind_1_choice, pd.DataFrame())      
-selected_ind_2_w_correct_icb = indicators_list_dict.get(ind_2_choice, pd.DataFrame())     
-selected_ind_3_w_correct_icb = indicators_list_dict.get(ind_3_choice, pd.DataFrame())       
-
-
 # Allocation for these indicators is indirectly proportional (the higher the value, the less the allocation)
 # hence, their calculation needs 'reversing'
 ind_needs_reversing = ['Bowel cancer screening coverage', 'Cervical cancer screening coverage (age 25-49)', 
-                       'Cervical cancer screening coverage (age 50-64)', 'Smoking prevalence (15+)',
+                       'Cervical cancer screening coverage (age 50-64)',
                        'MMR vaccine uptake (at least 1 dose - age 1-1.5 yrs)',
+                       'Last BP reading of patients (<80 yrs, with hypertension) <= 140/90 mmHg in the last 12 months',
+                       'Last BP reading of patients (80+ yrs, with hypertension) <= 150/90 mmHg in the last 12 months',
                        'Patients who have a record of BP in the last 5 yrs (45+)',
                        'Patients with diabetes treated with a statin (with a history of CVD - excl. haem. stroke)',
                        'People with type 2 diabetes who have received an annual foot check',
                        'People with type 2 diabetes who received a cholesterol check']
 
+########################################################################################
+
+# SIDEBAR
+
+# Select the indicators
+with st.sidebar:
+    st.write('**Select up to three indicators**') 
+    
+# Listed Indicator 1    
+    ind_1_choice = st.sidebar.selectbox("Indicator #1:", indicators_list, help="Select the first indicator")
+    if ind_1_choice in ind_needs_reversing:
+        st.write(':orange[(High values result in less money)]')
+    elif ind_1_choice == 'Choose an option':
+        st.write('')    
+    elif ind_1_choice == 'Weighted population':
+        st.write('')    
+    else:
+        st.write(':green[(High values result in more money)]')
+    
+    ind_1_weight = st.slider('**Weight**: contribution of indicator #1 (%)',0,100,50, step=1, 
+                     help='Select what proportion of the funding should be allocated based on indicator #1)')
+
+# Listed Indicators 2 & 3
+# This part makes sure that the slider for indicator 2 and 3 only appear if an indicator
+# is picked from the selectbox (hence, anything other than the  default 'choose an option')
+
+    # For indicator 2
+    ind_2_choice = st.sidebar.selectbox("Indicator #2 (optional):", indicators_list, 
+                                        help="Select the second indicator")
+    if ind_2_choice in ind_needs_reversing:
+        st.write(':orange[(High values result in less money)]')
+    elif ind_2_choice == 'Choose an option':
+        st.write('')    
+    elif ind_2_choice == 'Weighted population':
+        st.write('')    
+    else:
+        st.write(':green[(High values result in more money)]')
+    
+    if ind_2_choice != 'Choose an option':
+        ind_2_weight = st.slider('**Weight**: contribution of indicator #2 (%)',0,100,0, step=1,
+                                 help='Select what proportion of the funding should be allocated based on indicator #2')
+    else:
+        ind_2_weight = 0
+
+    # For indicator 3
+    ind_3_choice = st.sidebar.selectbox("Indicator #3 (optional):", indicators_list,
+                                        help="Select the third indicator")
+    if ind_3_choice in ind_needs_reversing:
+        st.write(':orange[(High values result in less money)]')
+    elif ind_3_choice == 'Choose an option':
+        st.write('')    
+    elif ind_3_choice == 'Weighted population':
+        st.write('')    
+    else:
+        st.write(':green[(High values result in more money)]')
+
+    if ind_3_choice != 'Choose an option':
+        ind_3_weight = st.slider('**Weight**: contribution of indicator #3 (%)',0,100,0, step=1,
+                                 help='Select what proportion of the funding should be allocated based on indicator #3')
+    else:
+        ind_3_weight = 0
+
+
+    indicators_weights = [(ind_1_choice, ind_1_weight), (ind_2_choice, ind_2_weight), (ind_3_choice, ind_3_weight)] 
+    indicators_weights = [(indicator, weight) for indicator, weight in indicators_weights if weight > 0]
+
+################################################################################
+
+# Checkbox 'to check' if the user wants to add his/her own indicator data
+    user_wants_to_upload_indicator = st.checkbox('Do you want to upload your indicator instead?', 
+                                  help='Should you wish to use your own indicator data for your ICB, '
+                                  "you can upload up to three files (in '.csv' format). "
+                                  'Your file should include only two columns: column 1 '
+                                  'should have the GP code and column 2 should have the indicator values '
+                                  'for that GP practice')
+ 
+
+    if user_wants_to_upload_indicator:
+        # First Uploaded indicator 
+        uploaded_file_1 = st.file_uploader("Upload your first indicator", type= ['csv', 'xlsx'])  # 4 some reason it crashes if I upload .xlsx files
+        if uploaded_file_1 is not None: 
+            uploaded_indicator_1 = pd.read_csv(uploaded_file_1) 
+            df_uploaded_indicator_1 = pd.DataFrame(uploaded_indicator_1)
+            name_indicator_1 = st.text_input("Enter name of your first indicator", 
+                                                placeholder="Enter name of indicator", 
+                                                label_visibility='collapsed')
+            if name_indicator_1 is None or name_indicator_1 == "":
+                name_indicator_1 = 'Uploaded indicator #1'
+            high_gets_more_1 = st.radio('High value results in:', ["More funding", "Less funding"], horizontal = True,
+                                        help='Select whether higher values for this indicator should result in allocating '
+                                        'proportionally more money or less money than a lower indicator value')
+            uploaded_ind_1_weight = st.slider(f'**Weight**: contribution of {name_indicator_1} (%)',0,100,0, step=1,
+                                            help='Select what proportion of the funding should be allocated based on your first uploaded indicator')
+                
+            # Get the current column names
+            current_columns_1 = df_uploaded_indicator_1.columns.tolist()
+            # Create a dictionary to map old column names to new column names
+            column_mapping_1 = {current_columns_1[0]: 'GP code', current_columns_1[1]: 'xyz'}
+            # Rename the columns
+            df_uploaded_indicator_1.rename(columns=column_mapping_1, inplace=True)
+            # Match the uploaded indicator to the indicators listed
+            matched_uploaded_indicator_1 = pd.merge(selected_icb_for_ind_n_pop['GP code'], df_uploaded_indicator_1, on='GP code', how='left')
+
+            
+            # Second Uploaded indicator 
+            st.write('')
+            st.write('')
+            uploaded_file_2 = st.file_uploader("Upload your second indicator (optional)", type= ['csv'])
+            if uploaded_file_2 is not None: 
+                uploaded_indicator_2 = pd.read_csv(uploaded_file_2) 
+                df_uploaded_indicator_2 = pd.DataFrame(uploaded_indicator_2)
+                name_indicator_2 = st.text_input("Enter name of your second indicator",  
+                                                placeholder="Enter name of indicator", 
+                                                label_visibility='collapsed')
+
+                if name_indicator_2 is None or name_indicator_2 == "":
+                    name_indicator_2 = 'Uploaded indicator #2'
+                high_gets_more_2 = st.radio('High value results in:', ["More funding ", "Less funding "], horizontal = True,
+                                        help='Select whether higher values for this indicator should result in allocating '
+                                        'proportionally more money or less money than a lower indicator value')
+
+                uploaded_ind_2_weight = st.slider(f'**Weight**: contribution of {name_indicator_2} (%)',0,100,0, step=1,
+                                        help='Select what proportion of the funding should be allocated based on your second uploaded indicator')
+
+                # Get the current column names
+                current_columns_2 = df_uploaded_indicator_2.columns.tolist()
+                # Create a dictionary to map old column names to new column names
+                column_mapping_2 = {current_columns_2[0]: 'GP code', current_columns_2[1]: 'xyz'}
+                # Rename the columns
+                df_uploaded_indicator_2.rename(columns=column_mapping_2, inplace=True)
+                # Match the uploaded indicator to the indicators listed
+                matched_uploaded_indicator_2 = pd.merge(selected_icb_for_ind_n_pop['GP code'], df_uploaded_indicator_2, on='GP code', how='left')
+
+                # Third Uploaded indicator 
+                st.write('')
+                st.write('')
+                uploaded_file_3 = st.file_uploader("Upload your third indicator (optional)", type= ['csv'])
+                if uploaded_file_3 is not None: 
+                    uploaded_indicator_3 = pd.read_csv(uploaded_file_3) 
+                    df_uploaded_indicator_3 = pd.DataFrame(uploaded_indicator_3)
+                    name_indicator_3 = st.text_input("Enter name of your third indicator",  
+                                                placeholder="Enter name of indicator", 
+                                                label_visibility='collapsed')
+
+                    if name_indicator_3 is None or name_indicator_3 == "":
+                        name_indicator_3 = 'Uploaded indicator #3'
+                    high_gets_more_3 = st.radio('High value results in:', ["More funding  ", "Less funding  "], horizontal = True,
+                                        help='Select whether higher values for this indicator should result in allocating '
+                                        'proportionally more money or less money than a lower indicator value')
+
+                    uploaded_ind_3_weight = st.slider(f'**Weight**: contribution of {name_indicator_3} (%)',0,100,0, step=1,
+                                        help='Select what proportion of the funding should be allocated based on your third uploaded indicator')
+
+                    # Get the current column names
+                    current_columns_3 = df_uploaded_indicator_3.columns.tolist()
+                    # Create a dictionary to map old column names to new column names
+                    column_mapping_3 = {current_columns_3[0]: 'GP code', current_columns_3[1]: 'xyz'}
+                    # Rename the columns
+                    df_uploaded_indicator_3.rename(columns=column_mapping_3, inplace=True)
+                    # Match the uploaded indicator to the indicators listed
+                    matched_uploaded_indicator_3 = pd.merge(selected_icb_for_ind_n_pop['GP code'], df_uploaded_indicator_3, on='GP code', how='left')
+
+            up_indicators_weights = [(name_indicator_1, uploaded_ind_1_weight), (name_indicator_2, uploaded_ind_2_weight), (name_indicator_3, uploaded_ind_3_weight)]
+            up_indicators_weights = [(up_indicator, up_weight) for up_indicator, up_weight in up_indicators_weights if up_weight > 0]
+
+################################################################################          
+
+selected_ind_1_w_correct_icb = indicators_list_dict.get(ind_1_choice, pd.DataFrame())      
+selected_ind_2_w_correct_icb = indicators_list_dict.get(ind_2_choice, pd.DataFrame())     
+selected_ind_3_w_correct_icb = indicators_list_dict.get(ind_3_choice, pd.DataFrame())       
+
+##################################################################################
 
 # For the calculations below, the weights of indicators need to add up to 100%, so 
 # a remainder will be calculated based on the population size selected above. 
