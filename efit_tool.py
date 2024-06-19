@@ -44,7 +44,7 @@ st.set_page_config(
     layout="wide",    # alternatively write "centered" 
     initial_sidebar_state="expanded",
     menu_items={
-        "Get Help": "https://www.heec.co.uk/category/how-to-guide/",            # amend web address
+        "Get Help": "https://www.heec.co.uk/resources/extra-funding-allocation-inequality-tool-efit/",            
 #        "Report a bug": "https://github.com/",    # amend with web address of my GitHub page
         "About": "This tool is designed to support ICBs to calculate the allocation of extra funding to General Practices. Please refer to the 'Tutorial' tab in the sidebar for User Guide for instructions." 
     },)
