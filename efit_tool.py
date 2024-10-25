@@ -40,7 +40,7 @@ from indicators_n_pop_data_23_24 import f_pop_qox, f_pop_qhg, f_pop_qhl, f_pop_q
 # Set page configuration
 st.set_page_config(
     page_title="eFIT",
-#    page_icon="https://www.england.nhs.uk/wp-content/themes/nhsengland/static/img/favicon.ico",
+    page_icon="https://www.england.nhs.uk/wp-content/themes/nhsengland/static/img/favicon.ico",
     layout="wide",    # alternatively write "centered" 
     initial_sidebar_state="expanded",
     menu_items={
@@ -61,7 +61,7 @@ st.set_page_config(
 #st.image('input_data_other/logos_n_name.png', width=750)
 
 # ADD NEW LOGO for London Region 
-st.image('input_data_other/london_logos_n_name_2.png', width=750)
+st.image('input_data_other/london_logos_n_name_2.png', width=1000)
 
 #These 17 lines make you insert text from a 'markdown' file (text written as markdown) 
 #by reading in the file
