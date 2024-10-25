@@ -55,10 +55,13 @@ st.set_page_config(
 #st.title('Extra Funding allocation Inequality Tool (eFIT)')
 
 # ADD TITLE AS IMAGE
-st.image('input_data_other/name_wo_logo_2.png', width=500)
+#st.image('input_data_other/name_wo_logo_2.png', width=500)
 
-# ADD LOGO
+# ADD OLD LOGO for C&P ICB 
 #st.image('input_data_other/logos_n_name.png', width=750)
+
+# ADD NEW LOGO for London Region 
+st.image('input_data_other/london_logos_n_name.png', width=750)
 
 #These 17 lines make you insert text from a 'markdown' file (text written as markdown) 
 #by reading in the file
