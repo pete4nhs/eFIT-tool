@@ -61,7 +61,7 @@ st.set_page_config(
 #st.image('input_data_other/logos_n_name.png', width=750)
 
 # ADD NEW LOGO for London Region 
-st.image('input_data_other/london_logos_n_name_2.png', width=1000)
+st.image('input_data_other/london_logos_n_name_3.png', width=850)
 
 #These 17 lines make you insert text from a 'markdown' file (text written as markdown) 
 #by reading in the file
