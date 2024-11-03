@@ -1,13 +1,12 @@
 '''
 @author: peter.saiu@nhs.net
 Created: 2024
-version: 0.0.1
+version: 1.3
 
 Description: 
-The code in this streamlit script allows you to run the allocation calculations based on the 
-user's preferences. 
+The code in this streamlit script allows you to run the allocation calculations based on user preferences. 
 
-Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas, Ben Jackson and Luke Natali.
+Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas, Fiona Head, Ben Jackson and Stefano Conti.
 
 '''
 
