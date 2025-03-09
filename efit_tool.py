@@ -6,7 +6,7 @@ version: 1.3
 Description: 
 The code in this streamlit script allows you to run the allocation calculations based on user preferences. 
 
-Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas, Fiona Head, Ben Jackson and Stefano Conti.
+Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas, Fiona Head and Stefano Conti.
 
 '''
 
