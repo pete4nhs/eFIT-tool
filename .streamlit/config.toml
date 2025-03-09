@@ -6,4 +6,4 @@ primaryColor="#0072CE"                     # e.g. colour for buttons and sliders
 backgroundColor="#ffffff"
 secondaryBackgroundColor="#e8eef9"                      # e.g. colour of sidebar
 textColor="#000000"
-font="sans serif"
+font="Arial"
