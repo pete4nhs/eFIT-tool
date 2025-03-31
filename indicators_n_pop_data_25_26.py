@@ -62,7 +62,7 @@ indicators_qwo = pd.read_csv(f'input_data_ind/QWO_{year}.csv')      # West Yorks
 
 # Import the population data
 # Males
-m_pop_qox = pd.read_csv(f'input_data_m/m_pop_qox_{year}.csv')      
+m_pop_qox = pd.read_csv(f'input_data_m/m_pop_qox_2025-26.csv')      
 m_pop_qhg = pd.read_csv(f'input_data_m/m_pop_qhg_{year}.csv')       
 m_pop_qhl = pd.read_csv(f'input_data_m/m_pop_qhl_{year}.csv')       
 m_pop_qua = pd.read_csv(f'input_data_m/m_pop_qua_{year}.csv')       
