@@ -20,14 +20,17 @@ st.warning('To be noted that some health data might be missing, hence we suggest
 st.write('')
 st.title('Data sources')
 # Messages
-st.write('Indicators data **for 2022/23**, including IMD scores (2019)* and prevalence (QOF) data, was extracted on 26/3/2024 from fingertips ( https://fingertips.phe.org.uk/ ).')
-st.write('*Where new General Practices opened or merged/demerged (e.g. Cambridgeshire and Peterborough ICB and Nottingham and Nottinghamshire ICB), '
+st.write('Indicators data **for 2023/24**, including IMD scores (2019)* and prevalence (QOF) data, was extracted on 22/3/2025 from fingertips ( https://fingertips.phe.org.uk/ ).')
+st.write('*For some ICBs, where new General Practices opened or merged/demerged (e.g. Cambridgeshire and Peterborough ICB and Nottingham and Nottinghamshire ICB), '
          'we have calculated their new IMD.')
 
-st.write('Weighted population data is for 2024/25 and was extracted from: J-Overall weighted populations by ICB and GP practice 2023/24 to 2024/25 at NHS England >> Supporting spreadsheets for allocations 2023/24 to 2024/25'
-         'available at: https://www.england.nhs.uk/publication/supporting-spreadsheets-for-allocations-2023-24-to-2024-25/ ')
-st.write('General Practices population size data is as of March 2024 and were extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice')
-
+st.write('Weighted population data is for 2024/25 and was extracted from: J–overall weighted populations by integrated care board and GP practice 2025 to 2026 '
+         'at NHS England >> Supporting spreadsheets for 2025/26 allocations'
+         'available at: https://www.england.nhs.uk/publication/supporting-spreadsheets-for-2025-26-allocations/ ')
+st.write('General Practices population size data is as of March 2025 and was extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice')
+st.write()
+st.write('**Version Control**')
+st.write('This new data was added into the tool on 31/3/2025')
 
 
 
@@ -68,9 +71,7 @@ st.write("**A:** Without specific instructions on how you want to split the fund
 st.write('')
 st.write('')
 
-st.write('**Acknowledgments**: We thank the Health Service Modelling Associates (HSMA) programme (https://sites.google.com/nihr.ac.uk/hsma/home ) and Dr Stefano Conti from The Health Foundation')
+st.write('**Acknowledgments**: We thank the Health Service Modelling Associates (HSMA) (https://sites.google.com/nihr.ac.uk/hsma/home )')
 st.write('')
 st.write('')
-st.write(' **To report any bug, feedback or special requests please email: peter.saiu@nhs.net** ')
-st.write('')
-st.success('Please let us know if your organisation has used this tool')
+st.write(' **To report any bug, feedback or special requests please email: peter.
