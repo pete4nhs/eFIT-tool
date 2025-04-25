@@ -71,7 +71,7 @@ st.write("**A:** Without specific instructions on how you want to split the fund
 st.write('')
 st.write('')
 
-st.write('**Acknowledgments**: We thank the Health Service Modelling Associates (HSMA) (https://sites.google.com/nihr.ac.uk/hsma/home )')
+st.write('**Acknowledgments**: We thank the Health Service Modelling Associates (HSMA) (https://sites.google.com/nihr.ac.uk/hsma/home ), Dr John Ford and Dr Stefano Conti from the Health Foundation.')
 st.write('')
 st.write('')
 st.write(' **To report any bug, feedback or special requests please email: peter.saiu@nhs.net** ')
