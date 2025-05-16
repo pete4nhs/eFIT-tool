@@ -8,3 +8,5 @@ I propose to use an equation from the Inequality Strategy for Cambridgeshire and
 The solution:
 This eFIT tool  is a user-friendly Streamlit web-app where a user would input the amount of funding, select the ICB, specify the demographics (age and gender for intervention) and tweak the indicator and the weights (e.g. to give more based inequality or prevalence of disease etc).  Upon hitting the 'Calculate' button the result is instantaneous and you can download the table with the calculated allocations.
 By making this tool available to all ICBs in England, we can establish a general consensus on how ICBs can promptly split extra funding to primary care taking into consideration inequalities and local needs.
+
+The tool can be accessed at this web address: https://efit-tool.streamlit.app/
