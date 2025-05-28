@@ -28,8 +28,8 @@ st.write('Weighted population data is for 2024/25 and was extracted from: J–ov
          'at NHS England >> Supporting spreadsheets for 2025/26 allocations'
          'available at: https://www.england.nhs.uk/publication/supporting-spreadsheets-for-2025-26-allocations/ ')
 st.write('General Practices population size data is as of April 2025 and was extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice.')
-st.write('Caveat: If GP practices have merged in the last year, some health indicators taken from fingertips might still display the values for the GP practice that retained the GP code for the merged organisations ')
-st.write('(rather than averaging the value of all the merged organisations). If this is the case, reach out to us to see if we can calculate an updated value.')
+st.write('Caveat: If GP practices have merged in the last year, some health indicators taken from fingertips might still display the values for the GP practice that retained the GP code for the merged organisations '
+         '(rather than averaging the value of all the merged organisations). If this is the case, reach out to us to see if we can calculate an updated value.')
 st.write()
 st.write('**Version Control**')
 st.write('This new data was added into the tool on 27/5/2025')
