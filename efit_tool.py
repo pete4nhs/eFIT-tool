@@ -8,7 +8,7 @@ Description:
 The code in this streamlit script allows you to run the allocation calculations based on the 
 user's preferences. 
 
-Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas and Stefano Conti.
+Acknowledgements: Dan Chalk, Sammi Rosser, John Ford, Shylaja Thomas, Stuti Mukherjee and Stefano Conti.
 
 '''
 
@@ -62,7 +62,7 @@ st.set_page_config(
 #st.image('input_data_other/logos_n_name.png', width=750)
 
 # ADD NEW LOGO for London Region 
-st.image('input_data_other/london_logos_n_name.png', width=1050)
+st.image('input_data_other/cp_n_london_logos_n_name.png', width=1050)
 
 #These 17 lines make you insert text from a 'markdown' file (text written as markdown) 
 #by reading in the file
