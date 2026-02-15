@@ -63,7 +63,7 @@ indicators_qwo = pd.read_csv(f'input_data_ind/indicator_QWO_{year_v2}.csv')     
 
 # Import the population data
 # Males
-m_pop_qox = pd.read_csv(f'input_data_m/m_pop_qox_{year}.csv')      
+m_pop_qox = pd.read_csv(f'input_data_m/m_pop_QOX_{year}.csv')      
 m_pop_qhg = pd.read_csv(f'input_data_m/m_pop_qhg_{year}.csv')       
 m_pop_qhl = pd.read_csv(f'input_data_m/m_pop_qhl_{year}.csv')       
 m_pop_qua = pd.read_csv(f'input_data_m/m_pop_qua_{year}.csv')       
@@ -152,6 +152,7 @@ f_pop_qwo = pd.read_csv(f'input_data_f/f_pop_qwo_{year}.csv')
 
 
 # do I need to close all these files above now e.g. 'indicators_qox.close()       
+
 
 
 
