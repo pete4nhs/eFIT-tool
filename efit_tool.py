@@ -48,8 +48,7 @@ st.set_page_config(
     menu_items={
 #        "More info": "https://www.heec.co.uk/resources/extra-funding-allocation-inequality-tool-efit/",   # not accepted key
 #        "Report a bug": "https://github.com/",    # amend with web address of my GitHub page
-        "About": "This tool is designed to support ICBs to calculate the allocation of extra funding to General Practices. Please refer to the 'Tutorial' tab in the sidebar for User Guide for instructions."
-    },)
+        "About": "This tool is designed to support ICBs to calculate the allocation of extra funding to General Practices. Please refer to the 'Tutorial' tab in the sidebar for User Guide for instructions."},)
 
 # The background colour is defined by the 'config' file in the '.streamlit' folder
 
@@ -86,17 +85,16 @@ def read_file_contents(file_name):
 st.markdown(read_file_contents(INTRO_FILE))
 ################################################################################
 
-icb_list = ['Central East ICB','Essex ICB','Norfolk and Suffolk ICB','West and North London ICB','Surrey and Sussex ICB',
-            'Bath and North East Somerset, Swindon and Wiltshire ICB', 'Birmingham and Solihull ICB', 'Black Country ICB',
-              'Bristol, North Somerset and South Gloucestershire ICB', 'Cheshire and Merseyside ICB', 
+icb_list = ['Bath and North East Somerset, Swindon and Wiltshire ICB', 'Birmingham and Solihull ICB', 'Black Country ICB',
+              'Bristol, North Somerset and South Gloucestershire ICB', 'Central East ICB', 'Cheshire and Merseyside ICB', 
               'Cornwall and the Isles of Scilly ICB', 'Coventry and Warwickshire ICB', 'Derby and Derbyshire ICB', 
-              'Devon ICB', 'Dorset ICB', 'Gloucestershire ICB', 'Greater Manchester ICB', 'Hampshire and Isle of Wight ICB', 
+              'Devon ICB', 'Dorset ICB', 'Essex ICB','Gloucestershire ICB', 'Greater Manchester ICB', 'Hampshire and Isle of Wight ICB', 
               'Herefordshire and Worcestershire ICB', 'Humber and North Yorkshire ICB', 'Kent and Medway ICB', 
               'Lancashire and South Cumbria ICB', 'Leicester, Leicestershire and Rutland ICB', 'Lincolnshire ICB', 
-              'North East and North Cumbria ICB', 'North East London ICB', 'Northamptonshire ICB', 
+              'Norfolk and Suffolk ICB', 'North East and North Cumbria ICB', 'North East London ICB', 'Northamptonshire ICB', 
               'Nottingham and Nottinghamshire ICB', 'Shropshire, Telford and Wrekin ICB', 'Somerset ICB', 
               'South East London ICB', 'South West London ICB', 'South Yorkshire ICB', 
-              'Staffordshire and Stoke-on-Trent ICB', 'West Yorkshire ICB']
+              'Staffordshire and Stoke-on-Trent ICB', 'Surrey and Sussex ICB', 'West and North London ICB', 'West Yorkshire ICB']
 
 # SIDEBAR
 icb_choice = st.sidebar.selectbox("**Select your ICB**:", icb_list, help="Select your ICB from the drop down list")
