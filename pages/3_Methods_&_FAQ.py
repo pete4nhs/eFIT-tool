@@ -26,7 +26,7 @@ st.write('*Following the ICB mergers (from April 2026), we have updated the indi
 st.write('Weighted population data is for 2026/27 and was extracted from: J–overall weighted populations by ICB and GP practice 2026/27 to 2028/29'
          'at NHS England >> Supporting spreadsheets for allocations 2026/27 to 2028/29'
          'available at: https://www.england.nhs.uk/publication/supporting-spreadsheets-for-allocations-2026-27-to-2028-29/#j ')
-st.write('General Practices population size data is as of April 2026 and was extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice')
+st.write('General Practices population size data is as of April 2026 (taking into consideration the new ICB mergers) and was extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice')
 st.write()
 st.write('**Version Control**')
 st.write('The tool was updated on 10/5/2026')
