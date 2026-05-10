@@ -20,17 +20,16 @@ st.warning('To be noted that some health data might be missing, hence we suggest
 st.write('')
 st.title('Data sources')
 # Messages
-st.write('Indicators data **for 2024/25**, including IMD scores (2025)* and prevalence (QOF) data, was extracted on 1/2/2026 from fingertips ( https://fingertips.phe.org.uk/ ).')
-st.write('*For some ICBs, where new General Practices opened or merged/demerged (e.g. Cambridgeshire and Peterborough ICB and Nottingham and Nottinghamshire ICB), '
-         'we have calculated their new IMD.')
+st.write('Indicators data **for 2024/25**, including IMD scores (2025)* and prevalence (QOF) data, were extracted on 1/2/2026 from fingertips ( https://fingertips.phe.org.uk/ ).')
+st.write('*Following the ICB mergers (from April 2026), we have updated the indicators for the new ICBs on 10/5/2026')
 
 st.write('Weighted population data is for 2026/27 and was extracted from: J–overall weighted populations by ICB and GP practice 2026/27 to 2028/29'
          'at NHS England >> Supporting spreadsheets for allocations 2026/27 to 2028/29'
          'available at: https://www.england.nhs.uk/publication/supporting-spreadsheets-for-allocations-2026-27-to-2028-29/#j ')
-st.write('General Practices population size data is as of Jan 2026 and was extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice')
+st.write('General Practices population size data is as of April 2026 and was extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice')
 st.write()
 st.write('**Version Control**')
-st.write('The tool was updated on 15/2/2026')
+st.write('The tool was updated on 10/5/2026')
 
 
 
