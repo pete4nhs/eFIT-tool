@@ -15,14 +15,15 @@ import pandas as pd
 # Indicator and GP population data is for the year: 
 year_v3 = '2025-26_v3'  # delete after this version (used only for QRL HAMPSHIRE AND ISLE OF WIGHT ICB)
 year_v2 = '2025-26_v2'
+year_v1 = '2025-26_v1'
 year = '2026-27'
 
 # Import the indicators data
-indicators_S1Y5D = pd.read_csv(f'input_data_ind/indicator_S1Y5D_{year}.csv')      # Central East ICB
-indicators_D7T5G = pd.read_csv(f'input_data_ind/indicator_D7T5G_{year}.csv')      # Essex ICB
-indicators_T6Y0W = pd.read_csv(f'input_data_ind/indicator_T6Y0W_{year}.csv')      # Norfolk and Suffolk ICB
-indicators_Z9B2Z = pd.read_csv(f'input_data_ind/indicator_Z9B2Z_{year}.csv')      # West and North London ICB
-indicators_S0E4D = pd.read_csv(f'input_data_ind/indicator_S0E4D_{year}.csv')      # Surrey and Sussex ICB
+indicators_S1Y5D = pd.read_csv(f'input_data_ind/indicator_S1Y5D_{year_v1}.csv')      # Central East ICB
+indicators_D7T5G = pd.read_csv(f'input_data_ind/indicator_D7T5G_{year_v1}.csv')      # Essex ICB
+indicators_T6Y0W = pd.read_csv(f'input_data_ind/indicator_T6Y0W_{year_v1}.csv')      # Norfolk and Suffolk ICB
+indicators_Z9B2Z = pd.read_csv(f'input_data_ind/indicator_Z9B2Z_{year_v1}.csv')      # West and North London ICB
+indicators_S0E4D = pd.read_csv(f'input_data_ind/indicator_S0E4D_{year_v1}.csv')      # Surrey and Sussex ICB
 indicators_qox = pd.read_csv(f'input_data_ind/indicator_QOX_{year_v2}.csv')      # Bath and North East Somerset, Swindon and Wiltshire ICB
 indicators_qhl = pd.read_csv(f'input_data_ind/indicator_QHL_{year_v2}.csv')      # Birmingham and Solihull ICB
 indicators_qua = pd.read_csv(f'input_data_ind/indicator_QUA_{year_v2}.csv')      # Black Country ICB
