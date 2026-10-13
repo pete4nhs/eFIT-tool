@@ -31,7 +31,7 @@ st.write('Weighted population data is for 2026/27 and was extracted from: J–ov
 st.write('General Practices population size data is as of April 2026 (taking into consideration the new ICB mergers) and was extracted from NHS Digital at: https://digital.nhs.uk/data-and-information/publications/statistical/patients-registered-at-a-gp-practice')
 st.write()
 st.write('**Version Control**')
-st.write('The tool was updated on 10/5/2026')
+st.write('The tool was updated on 12/10/2026')
 
 
 
